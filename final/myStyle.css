@@ -1,0 +1,600 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #fff;
+  
+  /* Custom Cursor removed */
+}
+
+/* 헤더 */
+
+.site-title {
+  font-size: 0px;
+  margin-bottom: 0px;
+}
+
+.logo-img {
+  height: 100px; /* 로고 높이 조절 */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; /* 가운데 정렬 */
+  margin-bottom: 30px; /* 로고 밑 여백 */
+  transform: translateX(-18px); /* 왼쪽으로 살짝 보정 */
+}
+
+.site-header {
+  padding-top: 30px;
+  position: relative; /* ← 이 줄 추가 */
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 240px;
+  height: 100%;
+  background: #0d0984;
+  z-index: 999;
+}
+
+body.sidebar-open .category-nav {
+  display: none;
+}
+
+/* 카테고리 */
+
+.category-nav {
+  overflow: hidden; /* 밖으로 넘치는 글자 숨기기 */
+  white-space: nowrap;
+  background: #f7f7f7;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  pointer-events: none;
+}
+
+.category-track {
+  display: inline-flex;
+  gap: 60px; /* 문장 사이 간격 */
+  animation: banner-move 45s linear infinite;
+}
+
+.category-nav a {
+  text-decoration: none;
+  color: #4a4cc3;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 배너 hover 했을 때 살짝 멈추게 하고 싶으면 */
+.category-nav:hover .category-track {
+  animation-play-state: paused;
+}
+
+/* 구분선 */
+.divider {
+  margin: 20px auto;
+  width: 95%;
+  border-top: 1px solid #ccc;
+}
+
+/* 카드 레이아웃 */
+.card-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/*.card-labels {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }*/
+
+/* 카드 박스 */
+.card {
+  width: 340px;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  position: relative;
+}
+.tornado-page .card {
+  gap: 34px; /* ← 여기 숫자만 바꾸면 됨 */
+}
+
+.tornado-page .list {
+  width: 300px;
+}
+
+/* 카드 라벨 */
+.label-main {
+  font-size: 16px;
+  font-weight: 900;
+  color: #0d0984; /* 남색 */
+  display: block;
+  margin-bottom: 4px;
+}
+
+.label-box {
+  display: inline-block;
+  padding: 5px 7px;
+  background: #1e1e8a;
+  color: #fff;
+  border-radius: 4.5px;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Interactive cursor overrides removed to restore default browser behavior */
+
+/* 이미지 */
+.img-wrap {
+  width: 100%; /* Or 200% if that was the weird original, but 100% is safer for layout. I'll stick to 100% unless it breaks again. */
+  height: 250px;
+  background: white; /* 회색(#e6e6e6) 제거 -> 흰색 */ 
+  border-radius: 20px;
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+.card:hover .img-wrap img {
+  transform: scale(1.08); /* 원래 확대 비율로 복구 */
+}
+
+.tornado-page .img-wrap {
+  height: 188px;
+}
+
+/* 텍스트 */
+.card h3 {
+  margin-bottom: 17px;
+  font-size: 20px;
+}
+.card-desc {
+  max-width: 220px; /* 설명문 폭 통일 */
+  line-height: 1.4;
+  font-size: 14px;
+  color: #8f8e8e;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  min-height: 2.6em;
+}
+.card-price {
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.menu-btn {
+  position: absolute;
+  left: 68px;
+  top: 20px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 아이콘과 글씨 간격 */
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-btn img {
+  width: 18px; /* 원하는 만큼 줄여도 됨 */
+  height: 18px;
+  object-fit: contain;
+}
+
+.menu-btn img.menu-icon {
+  width: 20px;
+  height: 20px;
+}
+.menu-btn span {
+  color: #0d0984;
+  font-size: 14px;
+}
+
+/* ======================
+     카드 페이지 공통
+  ====================== */
+
+.card-page {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+}
+/* Tornado / 메뉴 카드 가로 정렬 */
+.card-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0d0984;
+  margin-bottom: 32px;
+}
+
+/* 태그 */
+.tag-row {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 12px;
+  background: #f1f1f1;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+/* img-wrap removed (covered by upper block) */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  font-size: 14px;
+  position: relative;
+
+  white-space: nowrap; /* ← 줄바꿈 금지 */
+}
+
+.tag::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* Non-Spicy 아이콘 */
+.tag--nonspicy::before {
+  background-image: url("img/nonspicy.png");
+}
+
+/* Sweet 아이콘 */
+.tag--sweet::before {
+  background-image: url("img/sweet.png");
+  transform: scale(1.2);
+}
+
+/* Vegan 아이콘 */
+.tag--Vegan::before {
+  background-image: url("img/vegan.png");
+}
+
+/* Crunch 아이콘 */
+.tag--Crunch::before {
+  background-image: url("img/crunch.png");
+  width: 22px;
+  height: 22px;
+}
+
+/* Spicy 아이콘 */
+.tag--spicy::before {
+  background-image: url("img/spicy.png");
+}
+
+/* Chewy 아이콘 */
+.tag--chewy::before {
+  background-image: url("img/chewy.png");
+}
+
+/* 사이드 메뉴 기본 상태 (숨김) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -240px; /* 화면 밖에 숨겨둠 */
+  width: 240px;
+  height: 100%;
+  background: #0d0984;
+  color: white;
+  padding: 40px 20px;
+  transition: left 0.3s ease; /* 부드러운 열림/닫힘 */
+  z-index: 20000;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px; /* ← 여기서 간격만 조절하면 됨! */
+  padding-left: 0;
+}
+.sidebar li {
+  display: flex; /* 아이콘 + 글자 가로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 12px; /* 아이콘과 글씨 간격 */
+
+  position: relative;
+  padding-left: 36px; /* 아이콘 자리 */
+  margin: 0; /* 불필요한 margin 제거 */
+}
+
+/*.sidebar ul li {
+    margin-bottom: 20px;
+  }*/
+
+.sidebar ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* 메뉴 오픈 상태 */
+.sidebar.open {
+  left: 0; /* 화면 안으로 들어옴 */
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0; /* 아이콘 크기 줄어들지 않게 고정 */
+}
+
+.i-bungeoppang::before {
+  background-image: url("img/bungeoppang.png");
+  top: 8px;
+  transform: scale(1.15);
+}
+.i-tornado::before {
+  background-image: url("img/tornado.png");
+  top: 1px;
+  transform: scale(1.2);
+}
+.i-tteok::before {
+  background-image: url("img/tteok.png");
+  top: 3px;
+  transform: scale(1.5);
+}
+.i-hotdog::before {
+  background-image: url("img/hotdog.png");
+  top: 5px;
+}
+.i-bbungtigi::before {
+  background-image: url("img/bbungtigi.png");
+  top: 2px;
+  transform: scale(0.75);
+}
+
+.hidden {
+  display: none;
+}
+
+.detail-view {
+  padding: 32px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-img {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.detail-back {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #0d0984;
+}
+
+.detail-view h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.detail-view p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+@keyframes banner-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 절반만 이동 (내용을 두 번 써놨기 때문에) */
+  }
+}
+
+/* Footer */
+.site-footer {
+  background: transparent;
+  color: #0d0984;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 20px;
+  border-top: none;
+}
+
+.site-footer h3,
+.site-footer p,
+.site-footer a {
+  color: #0d0984;
+}
+
+.footer-content h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.footer-content p {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 80px; /* Above normal footer area */
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: #0d0984;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(20px);
+
+  /* Centering & Visual Adjustment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px; /* Nudge arrow up */
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: #000060;
+  transform: translateY(-2px);
+}
+
+.footer-links {
+  display: none; /* Hide links as user removed them in HTML anyway */
+}
+
+.copyright {
+  font-size: 11px;
+  opacity: 0.5;
+  margin-top: 0;
+}
+
+/* Ensure content isn't hidden behind footer */
+body {
+  padding-bottom: 120px; /* Adequate space for content scrolling */
+}
+
+/* =========================================
+   Animations (Page Transition & Scroll Reveal)
+   ========================================= */
+
+/* 1. Define FadeInUp Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Apply to Page Containers (Page Transition Effect) */
+/* Whenever display:none is removed, this triggers */
+.card-container,
+.card-page,
+.detail-view {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 3. Staggered Reveal for Cards (Scroll Reveal Vibe) */
+.card {
+  /* opacity: 0; removed to prevent invisible content if animation fails */
+  animation: fadeInUp 0.6s ease-out both; /* both = backwards (start hidden) + forwards (stay visible) */
+}
+
+/* Delays for cascading effect */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.card:nth-child(10) {
+  animation-delay: 1s;
+}
