@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korea Street Food</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="myStyle.css?v=2" />
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <header class="site-header">
+      <button class="menu-btn">
+        <img src="img/menu.png" alt="menu" />
+        <span>MENU</span>
+      </button>
+      <h1 class="site-title">
+        <img src="img/logo.png" alt="logo" class="logo-img" id="mainLogo" style="cursor: pointer;" />
+      </h1>
+
+      <!-- Desktop Navigation (Visible on PC only) -->
+      <nav class="desktop-nav">
+        <ul>
+          <li class="i-bungeoppang">
+            <a href="#" data-page="bungeoppang-list">
+              <img src="img/bungeoppang.png" alt="icon" /> Bungeoppang
+            </a>
+          </li>
+          <li class="i-tornado">
+            <a href="#" data-page="tornado-list">
+              <img src="img/tornado.png" alt="icon" /> Tornado Potato
+            </a>
+          </li>
+          <li class="i-tteok">
+            <a href="#" data-page="tteok-list">
+              <img src="img/tteok.png" alt="icon" /> Tteok
+            </a>
+          </li>
+          <li class="i-hotdog">
+            <a href="#" data-page="hotdog-list">
+              <img src="img/hotdog.png" alt="icon" /> Hot-Dog
+            </a>
+          </li>
+          <li class="i-bbungtigi">
+            <a href="#" data-page="grain-list">
+              <img src="img/bbungtigi.png" alt="icon" /> Bbungtigi
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="category-nav">
+        <div class="category-track">
+          <!-- 세트 1 -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 2 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 3 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 4 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 5 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 6 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 7 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+
+          <!-- 세트 8 (무한루프용 복제) -->
+          <span>Welcome to Korea</span>
+          <span>Recommend Korea Street Food</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Intro Page (Hero Section) -->
+    <section class="intro-page" id="intro-page">
+      <div class="hero-content">
+        <h2 class="hero-title">Discover the Taste of Korea</h2>
+        <p class="hero-subtitle">Warm, Crispy, and Unforgettable Winter Snacks</p>
+      </div>
+
+      <div class="hero-slider">
+        <div class="hero-track">
+          <!-- Set 1 -->
+          <img src="img/bungeoppang-redbean.png" alt="Food" />
+          <img src="img/tornado-original.png" alt="Food" />
+          <img src="img/Tteokbokki.png" alt="Food" />
+          <img src="img/Hot Dog.png" alt="Food" />
+          <img src="img/bungeoppang-custard.png" alt="Food" />
+          <img src="img/tornado-cheese.png" alt="Food" />
+          <img src="img/Sotteok - Sotteok.png" alt="Food" />
+          <img src="img/bungeoppang-choco.png" alt="Food" />
+          
+          <!-- Set 2 (Duplicate for Loop) -->
+          <img src="img/bungeoppang-redbean.png" alt="Food" />
+          <img src="img/tornado-original.png" alt="Food" />
+          <img src="img/Tteokbokki.png" alt="Food" />
+          <img src="img/Hot Dog.png" alt="Food" />
+          <img src="img/bungeoppang-custard.png" alt="Food" />
+          <img src="img/tornado-cheese.png" alt="Food" />
+          <img src="img/Sotteok - Sotteok.png" alt="Food" />
+          <img src="img/bungeoppang-choco.png" alt="Food" />
+        </div>
+      </div>
+
+      <button id="enterBtn" class="cta-btn">View Details</button>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 카드 전체 -->
+    <main class="card-container hidden" id="bungeoppang-list">
+      <!-- 카드 1 -->
+      <article class="card" data-food="redbean">
+        <div class="card-labels">
+          <span class="label-main">Bungeoppang</span>
+          <span class="label-box">Red Bean</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/bungeoppang-redbean.png" alt="RedBean Bungeoppang" />
+        </div>
+
+        <h3>Red bean<br />Bungeoppang</h3>
+        <p class="card-desc">
+          The original fish bun filled with <br />the sweetness of red bean.
+        </p>
+        <p class="card-price">3 for 2,000 ~ 3,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+        </div>
+      </article>
+
+      <!-- 카드 2 -->
+      <article class="card" data-food="custard">
+        <div class="card-labels">
+          <span class="label-main">Bungeoppang</span>
+          <span class="label-box">Custard</span>
+        </div>
+        <div class="img-wrap">
+          <img src="img/bungeoppang-custard.png" alt="Custard Bungeoppang" />
+        </div>
+
+        <h3>Custard <br />Bungeoppang</h3>
+        <p class="card-desc">
+          Soft, sweet, super-moist <br />custard fish bun!
+        </p>
+        <p class="card-price">3 for 2,000 ~ 3,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+        </div>
+      </article>
+
+      <!-- 카드 3 -->
+      <article class="card" data-food="choco">
+        <div class="card-labels">
+          <span class="label-main">Bungeoppang</span>
+          <span class="label-box">Chocolate</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/bungeoppang-choco.png" alt="Chocolate Bungeoppang" />
+        </div>
+
+        <h3>
+          Chocolate<br />
+          Bungeoppang
+        </h3>
+        <p class="card-desc">
+          The ultimate sweet, melt-in-<br />your-mouth fish bun
+        </p>
+        <p class="card-price">3 for 3,000 ~ 4,500 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+        </div>
+      </article>
+
+      <!-- 카드 4 (두바이) -->
+      <article class="card" data-food="dubai">
+        <div class="card-labels">
+          <span class="label-main">Bungeoppang</span>
+          <span class="label-box">Dubai</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/bungeoppang-dubai.png" alt="Dubai Bungeoppang" />
+        </div>
+
+        <h3>Dubai <br />Bungeoppang</h3>
+        <p class="card-desc">
+          The perfect harmony of pistachio,<br />
+          chocolate, and pastry.
+        </p>
+        <p class="card-price">2 for 9,000 ~ 12,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+        </div>
+      </article>
+    </main>
+
+
+
+    <!-- Tornado Potato 카드 페이지 -->
+    <section class="card-page tornado-page hidden" id="tornado-page">
+      
+
+
+        <div class="card-container">
+
+        <article class="card" data-food="tornado-original">
+                <div class="card-labels">
+                  <span class="label-main">Tornado Potato</span>
+                  <span class="label-box">Original</span>
+                </div>
+
+        <div class="img-wrap">
+          <img src="img/tornado-original.png" alt="tornado original" />
+        </div>
+
+        <h3>Original <br />Tornado Potato</h3>
+        <p class="card-desc">
+            Original tornado potato, loved for </br>its thin and crispy crunch.
+        </p>
+        <p class="card-price">1 for 2,000 ~ 3,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--Vegan">Vegan</span>
+          <span class="tag tag--Crunch">Crunch</span>
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+        </div>
+      </article>
+      <article class="card" data-food="tornado-chili">
+        <div class="card-labels">
+          <span class="label-main">Tornado Potato</span>
+          <span class="label-box">Chili</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/tornado-chili.png" alt="tornado Chili" />
+        </div>
+
+        <h3>Chili <br />Tornado Potato</h3>
+        <p class="card-desc">
+          The spicy kick of chili perfectly <br />
+          pairs with crispy potato.
+        </p>
+        <p class="card-price">1 for 2,000 ~ 3,000 won</p>
+
+        <div class="tag-row">
+            <span class="tag tag--Vegan">Vegan</span>
+          <span class="tag tag--Crunch">Crunch</span>
+          <span class="tag tag--spicy">Spicy</span>
+        </div>
+      </article>
+      <article class="card" data-food="tornado-cheese">
+        <div class="card-labels">
+          <span class="label-main">Tornado Potato</span>
+          <span class="label-box">Cheese</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/tornado-cheese.png" alt="tornado Cheese" />
+        </div>
+
+        <h3>Cheese <br />Tornado Potato</h3>
+        <p class="card-desc">
+            The savory, cheese perfectly complements the crispy potato.
+        </p>
+        <p class="card-price">1 for 2,000 ~ 3,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+          <span class="tag tag--Crunch">Crunch</span>
+        </div>
+      </article>
+    </div>
+
+</section>
+
+     <!-- TTeok 카드 페이지 -->
+     <section class="card-page tteok hidden" id="tteok-page">
+      
+
+
+        <div class="card-container">
+
+        <article class="card" data-food="tteokbokki">
+                <div class="card-labels">
+                  <span class="label-main">Tteok</span>
+                  <span class="label-box">Tteokbokki</span>
+                </div>
+
+        <div class="img-wrap">
+          <img src="img/Tteokbokki.png" alt="tteokbokki" />
+        </div>
+
+        <h3>Original <br />Tteokbokki</h3>
+        <p class="card-desc">
+            Spicy rice cakes seasoned with </br>a sweet and savory sauce.
+        </p>
+        <p class="card-price">1 for 4,000 ~ 5,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--spicy">Spicy</span>
+          <span class="tag tag--sweet">sweet</span>
+          <span class="tag tag--chewy">Chewy</span>
+        </div>
+      </article>
+      <article class="card" data-food="sotteok">
+        <div class="card-labels">
+          <span class="label-main">Tteok</span>
+          <span class="label-box">Sotteok Sotteok</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/Sotteok - Sotteok.png"alt="Sotteok"/>
+        </div>
+
+        <h3>Sotteok - <br />Sotteok</h3>
+        <p class="card-desc">
+            Sausage and rice cake skewers with 
+            a sweet and spicy sauce.        </p>
+        <p class="card-price">1 for 3,000 ~ 3,500 won</p>
+
+        <div class="tag-row">
+            <span class="tag tag--nonspicy">Non-Spicy</span>
+          <span class="tag tag--sweet">sweet</span>
+        </div>
+      </article>
+      <article class="card" data-food="tteok-kkochi">
+        <div class="card-labels">
+          <span class="label-main">Tteok</span>
+          <span class="label-box">Tteok-Kkochi</span>
+        </div>
+
+        <div class="img-wrap">
+          <img src="img/Tteok-Kkochi.png" alt="Tteok-Kkochi" />
+        </div>
+
+        <h3>Tteok - <br />Kkochi</h3>
+        <p class="card-desc">
+            Chewy rice-cake glazed in a sweet and spicy Korean sauce.        </p>
+        <p class="card-price">1 for 2,500 ~ 3,000 won</p>
+
+        <div class="tag-row">
+          <span class="tag tag--spicy">Spicy</span>
+          <span class="tag tag--sweet">Sweet</span>
+          <span class="tag tag--chewy">Chewy</span>
+        </div>
+      </article>
+    </div>
+
+    </section>
+
+     <!-- hotdog 카드 페이지 -->
+     <section class="card-page hotdog hidden" id="hotdog-page">
+      
+
+
+      <div class="card-container">
+
+      <article class="card" data-food="hotdog-original">
+              <div class="card-labels">
+                <span class="label-main">Hot Dog</span>
+                <span class="label-box">Original</span>
+              </div>
+
+      <div class="img-wrap">
+        <img src="img/Hot Dog.png" alt="hotdog" />
+      </div>
+
+      <h3>Original <br />Hot Dog</h3>
+      <p class="card-desc">
+        Crispy batter wrapped around a juicy sausage with sweet ketchup.      </p>
+      <p class="card-price">1 for 2,000 ~ 2,500 won</p>
+
+      <div class="tag-row">
+        <span class="tag tag--nonspicy">Non-Spicy</span>
+        <span class="tag tag--sweet">sweet</span>
+      </div>
+    </article>
+    <article class="card" data-food="hotdog-potato">
+      <div class="card-labels">
+        <span class="label-main">Hot Dog</span>
+        <span class="label-box">Potato</span>
+      </div>
+
+      <div class="img-wrap">
+        <img src="img/Korea Corn Dog.png"alt="hotdog"/>
+      </div>
+
+      <h3>Korea <br />Corn Dog</h3>
+      <p class="card-desc">
+        A crispy, golden-fried hot dog with chewy and satisfying crunch.       </p>
+      <p class="card-price">1 for 3,000 ~ 3,500 won</p>
+
+      <div class="tag-row">
+          <span class="tag tag--nonspicy">Non-Spicy</span>
+        <span class="tag tag--Crunch">Crunch</span>
+      </div>
+    </article>
+    <article class="card" data-food="hotdog-cheese">
+      <div class="card-labels">
+        <span class="label-main">Hot Dog</span>
+        <span class="label-box">Cheese</span>
+      </div>
+
+      <div class="img-wrap">
+        <img src="img/hotdog-cheese.png" alt="hotdog" />
+      </div>
+
+      <h3>Korea<br />Cheese Corn Dog</h3>
+      <p class="card-desc">
+        Crispy on the outside, filled with stretchy, melty cheese inside.      <p class="card-price">1 for 2,500 ~ 3,000 won</p>
+
+      <div class="tag-row">
+        <span class="tag tag--nonspicy">Non-Spicy</span>
+        <span class="tag tag--sweet">Sweet</span>
+      
+      </div>
+    </article>
+  </div>
+
+  </section>
+
+ <!-- bbungtigi 카드 페이지 -->
+ <section class="card-page grain hidden" id="grain-page">
+      
+
+
+  <div class="card-container">
+
+  <article class="card" data-food="grain-rice">
+          <div class="card-labels">
+            <span class="label-main">Grain</span>
+            <span class="label-box">Bbungtigi</span>
+          </div>
+
+  <div class="img-wrap">
+    <img src="img/rice.png" alt="rice" />
+  </div>
+
+  <h3>Original <br />Bbungtigi</h3>
+  <p class="card-desc">
+    Crunchy puffed rice snack made from rice — irresistibly addictive!  <p class="card-price">200g for 2,000 ~ 2,500 won</p>
+
+  <div class="tag-row">
+    <span class="tag tag--Vegan">Vegan</span>
+    <span class="tag tag--Crunch">Crunch</span>
+    <span class="tag tag--nonspicy">Non-Spicy</span>
+  </div>
+</article>
+<article class="card" data-food="grain-corn">
+  <div class="card-labels">
+    <span class="label-main">Grain</span>
+    <span class="label-box">Gangnaengi</span>
+  </div>
+
+  <div class="img-wrap">
+    <img src="img/gangnaengi.png"alt="grain"/>
+  </div>
+
+  <h3>Corn <br />Gangnaengi</h3>
+  <p class="card-desc">
+    Crunchy puffed corn, commonly enjoyed as a drinking snack.
+  </p>
+  <p class="card-price">200g for 2,500 ~ 3,000 won</p>
+
+  <div class="tag-row">
+    <span class="tag tag--Vegan">Vegan</span>
+    <span class="tag tag--Crunch">Crunch</span>
+    <span class="tag tag--nonspicy">Non-Spicy</span>
+  </div>
+</article>
+<article class="card" data-food="grain-icecream">
+  <div class="card-labels">
+    <span class="label-main">grain</span>
+    <span class="label-box">With Icecream</span>
+  </div>
+
+  <div class="img-wrap">
+    <img src="img/IceCream Bbungtigi.png" alt="grain" />
+  </div>
+
+  <h3>Icecream<br />Bbungtigi</h3>
+  <p class="card-desc">
+    Crunchy puffed rice and creamy ice cream — a perfect combo!
+    <p class="card-price">1 for 3,000 ~ 3,500 won</p>
+  <div class="tag-row">
+    <span class="tag tag--Vegan">Vegan</span>
+    <span class="tag tag--Crunch">Crunch</span>
+    <span class="tag tag--nonspicy">Non-Spicy</span>
+  
+  </div>
+</article>
+</div>
+
+</section>
+
+    <!-- 전체 화면 상세 페이지 -->
+    <section class="detail-view hidden" id="detailView">
+      <button class="detail-back" id="detailBack">← Back</button>
+
+      <div class="detail-inner">
+        <!-- 왼쪽: 큰 이미지 -->
+        <div class="detail-image-wrap">
+          <img id="detailImg" class="detail-img" src="" alt="" />
+        </div>
+
+        <!-- 오른쪽: 텍스트 영역 -->
+        <div class="detail-text">
+          <h2 id="detailTitle"></h2>
+          <!-- <p id="detailSubTitle" class="detail-subtitle"></p> -->
+          
+          <div id="detailDesc" class="detail-desc"></div>
+
+          <p id="detailPrice" class="detail-price"></p>
+
+          <div class="detail-tags" id="detailTags">
+            <!-- JS에서 태그 버튼들 넣어줄 자리 -->
+          </div>
+
+          <div class="detail-extra">
+             <p class="detail-tip">Tip. Best enjoyed on a cold winter evening.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll to Top Button (Now Global) -->
+      <!-- Moved out of detail-view to be visible everywhere -->
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <h3>Korea Street Food</h3>
+        <p>Your guide to the best winter snacks in Korea.</p>
+        <p class="copyright">
+          © 2025 Korea Street Food. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- 측면 메뉴바 -->
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+
+      <ul>
+        <li class="i-bungeoppang"><a href="#">Bungeoppang</a></li>
+        <li class="i-tornado"><a href="#">Tornado Potato</a></li>
+        <li class="i-tteok"><a href="#">Tteok</a></li>
+        <li class="i-hotdog"><a href="#">Hot-Dog</a></li>
+        <li class="i-bbungtigi"><a href="#">Bbungtigi</a></li>
+      </ul>
+    </div>
+
+    <script src="myScript.js"></script>
+  </body>
+</html>
